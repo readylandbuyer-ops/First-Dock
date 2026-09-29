@@ -1,4 +1,6 @@
-# Ready Land Buyers Curative CRM: design spec (v1)
+# Ready Land Buyers Curative CRM: design HYPOTHESES (v1, unverified)
+
+> **Status: not a spec.** Written from public HTML and screenshots before any logged-in or server recon. It has known gaps: it assumes fields (next action, due, call log) that may not exist, and it ignores the dossier/ingest pipeline and the `localhost:3000` iteration. Replace it after `design/RECON.md` exists. Keep only what recon confirms.
 
 Author roles: product designer, interaction designer, information architect, distressed-real-estate operator, front-end engineer.
 
