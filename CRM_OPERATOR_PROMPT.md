@@ -1,6 +1,13 @@
-# CRM OPERATOR PROMPT (v2)
+# CRM OPERATOR PROMPT (v3)
 
 Run this in Claude Code on the machine that has VS Code connected to the Hetzner server, with the live CRM open in the browser.
+
+## Known facts (from the public front end; verify on the live system)
+
+- Live app: https://5-78-191-172.sslip.io/ ("Ready Land Buyers, Curative CRM"). Single-page vanilla JS, Python `BaseHTTP` server behind Caddy.
+- It is a curative-title workroom, not a stock Pipedrive clone: Pipeline / Mine (title exam) / Killed / Archived, deals with ADVANCE/KILL verdicts, a drawer with Call dossier, engine reports, parcel map and Action Notes.
+- The design to implement is in `design/DESIGN_SPEC.md`, with an interaction mockup in `design/mockup.html`. Follow it. Deviate only where the live app proves it wrong, and say why.
+- Do not assume the data model matches section 2 constraint 4's "Deal → Person → Organization → Activity". Read the real schema first.
 
 ## 0. The job
 
@@ -43,6 +50,7 @@ Before changing anything, determine what is actually running on the Hetzner serv
 Establish, and write down in about one page (no essay):
 - Stack, how it is deployed, and where it runs (process manager, containers, reverse proxy).
 - Which database, where it lives, and how it is backed up.
+- Whether next action, due date, blocker and call outcome already exist as data fields. This decides whether any migration is needed.
 - Where the deployed code differs from the repo (uncommitted changes, different branch, hand-edited files).
 - Logs and any current errors.
 - What in the UI is real, mocked or broken. Click through the main screens: dashboard, pipeline, deal, person, tasks, calls and activities.
@@ -79,7 +87,7 @@ The home screen is one ranked list:
 
 ## 6. The mandatory operator loop (the definition of done)
 
-Do this against the running system, and repeat it at least 3 times on 3 different deals:
+Do this against the running system (desktop and phone width), and repeat it at least 3 times on 3 different deals:
 
 Open CRM → find today's work → open a real deal → understand it → perform an action → record the result → create or confirm the next action → return to today's work → repeat.
 
